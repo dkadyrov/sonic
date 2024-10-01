@@ -19,10 +19,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.x'
 
     - name: Install Poetry
-      run: curl -sSL https://install.python-poetry.org | python3 -
+      run: pip install poetry
 
     - name: Install dependencies
       run: poetry install
