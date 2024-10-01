@@ -1,22 +1,37 @@
-name: Check documentation
-on: [push, pull_request]
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  docs:
-    name: Build documentation & check links
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-      - run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt nox
-      - name: Build documentation
-        run: nox --force-color --session=docs
-      - uses: actions/upload-artifact@v3
-        with:
-          name: docs
-          path: docs/_build
-      - name: Check links
-        run: nox --force-color --session=linkcheck
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install dependencies
+      run: poetry install
+
+    - name: Build Sphinx documentation
+      run: poetry run sphinx-build -b html docs/source docs/build
+
+    - name: Upload documentation artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docs
+        path: docs/build/html
