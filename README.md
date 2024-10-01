@@ -9,3 +9,7 @@ The Sound Organization and Network Integration for Collection/Collaboration (SON
 ```bash
 pip install sonic
 ```
+
+## Documentation
+
+The documentation for the SONIC Python package can be found [here](https://sonicdb.readthedocs.io/en/latest/).
