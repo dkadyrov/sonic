@@ -4,9 +4,19 @@ version = "0.1.0"
 description = ""
 authors = ["daniel kadyrov <daniel.kadyrov@gmail.com>"]
 readme = "README.md"
+package-mode = true
 
 [tool.poetry.dependencies]
 python = "^3.12"
+librosa = "^0.10.2.post1"
+pandas = "^2.2.3"
+pydub = "^0.25.1"
+matplotlib = "^3.9.2"
+sqlalchemy = "^2.0.35"
+sqlalchemy-utils = "^0.41.2"
+noisereduce = "^3.0.2"
+soundfile = "^0.12.1"
+scipy = "^1.14.1"
 
 
 [build-system]
