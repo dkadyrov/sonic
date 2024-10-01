@@ -1,11 +1,11 @@
-name: Publish to PyPI
+name: Publish to Test PyPI
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - '*.*.*'
 
 jobs:
-  pypi_release:
-    name: Builds Using Poetry and Publishes to PyPI
+  test_pypi_release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,6 +16,7 @@ jobs:
         run: echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
       - run: poetry install
       - run: poetry run pytest
-      - run: poetry config pypi-token.pypi "${{ secrets.PYPI_TOKEN }}"
+      - run: poetry config repositories.testpypi https://test.pypi.org/legacy/
+      - run: poetry config pypi-token.testpypi ${{ secrets.PYPI_TEST_TOKEN }}
       - name: Publish package
-        run: poetry publish --build
+        run: poetry publish --build -r testpypi
