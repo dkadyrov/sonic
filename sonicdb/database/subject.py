@@ -17,15 +17,15 @@ class Subject(Base):  # type: ignore
     """str: Subject name"""
 
     samples = relationship(
-        "sonic.database.sample.Sample",
+        "sonicdb.database.sample.Sample",
         back_populates="subject",
         enable_typechecks=False,
     )
     """list: list of Sample objects featuring the subject"""
 
-    # events = relationship("sonic.database.event.EventSubject", back_populates="subject", enable_typechecks=False)
+    # events = relationship("sonicdb.database.event.EventSubject", back_populates="subject", enable_typechecks=False)
     events = relationship(
-        "sonic.database.event.Event", back_populates="subject", enable_typechecks=False
+        "sonicdb.database.event.Event", back_populates="subject", enable_typechecks=False
     )
     """list: list of Run objects featuring the subject"""
 

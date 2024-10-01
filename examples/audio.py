@@ -1,10 +1,10 @@
 # %%
-from sonic import audio, utilities
+from sonicdb import audio, utilities
 import numpy as np
 
-# file = utilities.metadata("examples/sonic.wav")
+# file = utilities.metadata("examples/sonicdb.wav")
 
-a = audio.Audio("examples/sonic.wav")
+a = audio.Audio("examples/sonicdb.wav")
 # %%
 fig, ax = a.plot_spectrogram(
     window_size=128,

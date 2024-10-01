@@ -30,7 +30,7 @@ class Classification(Base):  # type: ignore
     """int: Sensor database ID"""
 
     sensor = relationship(
-        "sonic.database.sensor.Sensor",
+        "sonicdb.database.sensor.Sensor",
         back_populates="classifications",
         enable_typechecks=False,
     )
@@ -40,7 +40,7 @@ class Classification(Base):  # type: ignore
     """int: Sample database ID"""
 
     sample = relationship(
-        "sonic.database.sample.Sample",
+        "sonicdb.database.sample.Sample",
         back_populates="classifications",
         enable_typechecks=False,
     )

@@ -8,9 +8,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy_utils import database_exists
 
-from sonic import audio
-from sonic.models import Base, Channel, Sensor, Event, Subject, File
-from sonic import utilities
+from sonicdb import audio
+from sonicdb.models import Base, Channel, Sensor, Event, Subject, File
+from sonicdb import utilities
 
 from datetime import datetime
 
@@ -22,7 +22,7 @@ class Database:  # pragma: no cover
         # TODO Add support for other databases
 
         # if classification is True:
-        #     from sonic.database.classification import Classification
+        #     from sonicdb.database.classification import Classification
 
         self.engine = create_engine(f"sqlite:///{db}")
         if database_exists(self.engine.url):

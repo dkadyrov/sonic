@@ -1,1 +1,1 @@
-"""Test suite for the sonic package."""
+"""Test suite for the sonicdb package."""

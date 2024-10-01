@@ -4,7 +4,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from datetime import timedelta
-from sonic import sonic, models, audio
+from sonicdb import sonicdb, models, audio
 
 
 # @pytest.fixture(scope="module")
@@ -13,8 +13,8 @@ def test_database():
     if os.path.exists("examples/example.db"):
         os.remove("examples/example.db")
 
-    db = sonic.Database("examples/example.db")
-    sonic.database_exists(db.engine.url)
+    db = sonicdb.Database("examples/example.db")
+    sonicdb.database_exists(db.engine.url)
 
     sensor = models.Sensor(name="test_sensor")
     db.session.add(sensor)
@@ -22,7 +22,7 @@ def test_database():
     channel = models.Channel(sensor=sensor, number=0)
     db.session.add(channel)
 
-    f = audio.Audio("examples/sonic.wav")
+    f = audio.Audio("examples/sonicdb.wav")
 
     file = models.File(
         filepath=f.filename,

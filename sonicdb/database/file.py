@@ -10,7 +10,7 @@ from sqlalchemy.orm.session import Session
 from .base import Base
 import pathlib
 
-from sonic import audio
+from sonicdb import audio
 
 
 class File(Base):  # type: ignore # pragma: no cover
@@ -47,7 +47,7 @@ class File(Base):  # type: ignore # pragma: no cover
     """int: Channel database ID"""
 
     channel = relationship(
-        "sonic.database.channel.Channel",
+        "sonicdb.database.channel.Channel",
         back_populates="files",
         enable_typechecks=False,
     )
@@ -57,12 +57,12 @@ class File(Base):  # type: ignore # pragma: no cover
     """int: Sensor database ID"""
 
     sensor = relationship(
-        "sonic.database.sensor.Sensor", back_populates="files", enable_typechecks=False
+        "sonicdb.database.sensor.Sensor", back_populates="files", enable_typechecks=False
     )
     """Sensor: Sensor object"""
 
     samples = relationship(
-        "sonic.database.sample.Sample", back_populates="file", enable_typechecks=False
+        "sonicdb.database.sample.Sample", back_populates="file", enable_typechecks=False
     )
     """list: list of samples generated from the file"""
 

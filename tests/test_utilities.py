@@ -4,7 +4,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from datetime import timedelta
-from sonic import sonic, models, audio, utilities
+from sonicdb import sonicdb, models, audio, utilities
 
 
 # @pytest.fixture(scope="module")

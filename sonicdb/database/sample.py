@@ -22,7 +22,7 @@ class Sample(Base):  # type: ignore
     """int: Run database ID"""
 
     event = relationship(
-        "sonic.database.event.Event", back_populates="samples", enable_typechecks=False
+        "sonicdb.database.event.Event", back_populates="samples", enable_typechecks=False
     )
     """Run: Run object"""
 
@@ -30,7 +30,7 @@ class Sample(Base):  # type: ignore
     """int: Sensor database ID"""
 
     sensor = relationship(
-        "sonic.database.sensor.Sensor",
+        "sonicdb.database.sensor.Sensor",
         back_populates="samples",
         enable_typechecks=False,
     )
@@ -40,7 +40,7 @@ class Sample(Base):  # type: ignore
     """int: Channel database ID"""
 
     channel = relationship(
-        "sonic.database.channel.Channel",
+        "sonicdb.database.channel.Channel",
         back_populates="samples",
         enable_typechecks=False,
     )
@@ -50,7 +50,7 @@ class Sample(Base):  # type: ignore
     """int: Subject database ID"""
 
     subject = relationship(
-        "sonic.database.subject.Subject",
+        "sonicdb.database.subject.Subject",
         back_populates="samples",
         enable_typechecks=False,
     )
@@ -63,12 +63,12 @@ class Sample(Base):  # type: ignore
     """int: File database ID where sample audio comes from"""
 
     file = relationship(
-        "sonic.database.file.File", back_populates="samples", enable_typechecks=False
+        "sonicdb.database.file.File", back_populates="samples", enable_typechecks=False
     )
     """File: File object where sample audio comes from"""
 
     classifications = relationship(
-        "sonic.database.classification.Classification",
+        "sonicdb.database.classification.Classification",
         back_populates="sample",
         enable_typechecks=False,
     )

@@ -26,19 +26,19 @@ class Event(Base):  # type: ignore
 
     subject_id = Column(Integer, ForeignKey("subject.id"))
     subject = relationship(
-        "sonic.database.subject.Subject",
+        "sonicdb.database.subject.Subject",
         back_populates="events",
         enable_typechecks=False,
     )
     """list: list of Subjects featured in run"""
 
     samples = relationship(
-        "sonic.database.sample.Sample", back_populates="event", enable_typechecks=False
+        "sonicdb.database.sample.Sample", back_populates="event", enable_typechecks=False
     )
     """list: list of Samples featured in run"""
 
     channels = relationship(
-        "sonic.database.event.EventChannel",
+        "sonicdb.database.event.EventChannel",
         back_populates="event",
         enable_typechecks=False,
     )
@@ -61,13 +61,13 @@ class EventChannel(Base):  # type: ignore
     event_id = Column(ForeignKey("event.id"), primary_key=True)  # type: ignore
     """int: Run database ID"""
     event = relationship(
-        "sonic.database.event.Event", back_populates="channels", enable_typechecks=False
+        "sonicdb.database.event.Event", back_populates="channels", enable_typechecks=False
     )
     """Run: Run object"""
     channel_id = Column(ForeignKey("channel.id"), primary_key=True)  # type: ignore
     """int: Channel database ID"""
     channel = relationship(
-        "sonic.database.channel.Channel",
+        "sonicdb.database.channel.Channel",
         back_populates="events",
         enable_typechecks=False,
     )

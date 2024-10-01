@@ -7,7 +7,7 @@ The Sound Organization and Network Integration for Collection/Collaboration (SON
 ## Installation
 
 ```bash
-pip install sonic
+pip install sonicdb
 ```
 
 ## Documentation

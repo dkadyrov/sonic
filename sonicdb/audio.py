@@ -14,7 +14,7 @@ import soundfile as sf
 from pydub import AudioSegment
 from scipy import signal
 
-from sonic import utilities
+from sonicdb import utilities
 
 
 np.seterr(divide="ignore")

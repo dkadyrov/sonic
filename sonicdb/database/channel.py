@@ -21,26 +21,26 @@ class Channel(Base):  # type: ignore
     """int: Sensor database ID"""
 
     sensor = relationship(
-        "sonic.database.sensor.Sensor",
+        "sonicdb.database.sensor.Sensor",
         back_populates="channels",
         enable_typechecks=False,
     )
     """Sensor: Sensor object"""
 
     files = relationship(
-        "sonic.database.file.File", back_populates="channel", enable_typechecks=False
+        "sonicdb.database.file.File", back_populates="channel", enable_typechecks=False
     )
     """list: List of channel's File objects"""
 
     samples = relationship(
-        "sonic.database.sample.Sample",
+        "sonicdb.database.sample.Sample",
         back_populates="channel",
         enable_typechecks=False,
     )
     """list: List of channel's Sample objects"""
 
     events = relationship(
-        "sonic.database.event.EventChannel",
+        "sonicdb.database.event.EventChannel",
         back_populates="channel",
         enable_typechecks=False,
     )
