@@ -23,7 +23,7 @@ jobs:
 
     - name: Configure Poetry
       run: |
-        poetry config repositories.testpypi https://test.pypi.org/legacy/
+        poetry config repositories.testpypi https://test.pypi.org/legacy/        
         poetry config pypi-token.testpypi ${{ secrets.PYPI_TEST_TOKEN }}
 
     - name: Install dependencies
