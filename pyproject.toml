@@ -1,10 +1,15 @@
 [tool.poetry]
 name = "sonic"
 version = "0.1.0"
-description = ""
+description = "SONIC is a Python package that leverages relational databases to accommodate the storage and retrieval of audio files."
 authors = ["daniel kadyrov <daniel.kadyrov@gmail.com>"]
+license = "MIT License"
 readme = "README.md"
-package-mode = true
+homepage = "https://sonicdb.readthedocs.io/en/latest/"
+
+include = [
+    "LICENSE.md"
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -18,6 +23,8 @@ noisereduce = "^3.0.2"
 soundfile = "^0.12.1"
 scipy = "^1.14.1"
 
+[tool.poetry.dev-dependencies]
+pytest= "^8.3.3""
 
 [build-system]
 requires = ["poetry-core"]
