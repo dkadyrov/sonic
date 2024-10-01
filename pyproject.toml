@@ -5,7 +5,9 @@ description = "SONIC is a Python package that leverages relational databases to 
 authors = ["daniel kadyrov <daniel.kadyrov@gmail.com>"]
 license = "MIT License"
 readme = "README.md"
-homepage = "https://sonicdb.readthedocs.io/en/latest/"
+homepage = "https://github.com/dkadyrov/sonicdb"
+repository = "https://github.com/dkadyrov/sonicdb"
+documentation = "https://sonicdb.readthedocs.io/en/latest/"
 
 include = [
     "LICENSE.md"
@@ -23,8 +25,15 @@ noisereduce = "^3.0.2"
 soundfile = "^0.12.1"
 scipy = "^1.14.1"
 
+
 [tool.poetry.dev-dependencies]
 pytest= "^8.3.3"
+sphinx= "^8.0.2"
+furo = "^2024.8.6"
+sphinx-autobuild = "^2024.9.19"
+ruff = "^0.6.8"
+mypy = "^1.11.2"
+myst-parser = {version = ">=0.16.1"}
 
 [build-system]
 requires = ["poetry-core"]
