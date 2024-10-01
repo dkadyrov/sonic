@@ -1,4 +1,5 @@
 # type: ignore
+
 import pathlib
 
 import librosa
@@ -14,10 +15,10 @@ from sonic import utilities
 from datetime import datetime
 
 
-class Database:  # pragma: no cover type: ignore
+class Database:  # pragma: no cover
     """SONIC Database class"""
 
-    def __init__(self, db: str):  # type: ignore
+    def __init__(self, db: str):
         # TODO Add support for other databases
 
         # if classification is True:
@@ -55,7 +56,7 @@ class Database:  # pragma: no cover type: ignore
         sensor: Sensor = None,
         channel: Channel = None,
         channel_number: int = None,
-    ) -> audio.Audio:  # type: ignore
+    ) -> audio.Audio:  #
         init_start = start
         init_end = end
 
@@ -146,7 +147,7 @@ class Database:  # pragma: no cover type: ignore
 
     def get_sensor(
         self, sensor: Sensor | int | dict[str, int] | str
-    ) -> Sensor | None:  # type: ignore
+    ) -> Sensor | None:  #
         if isinstance(sensor, Sensor):
             return sensor
         elif isinstance(sensor, int):
@@ -174,7 +175,7 @@ class Database:  # pragma: no cover type: ignore
 
     def get_subject(
         self, subject: Subject | int | dict[str, int] | str
-    ) -> Subject | None:  # type: ignore
+    ) -> Subject | None:  #
         if isinstance(subject, Subject):
             return subject
         elif isinstance(subject, int):
@@ -199,7 +200,7 @@ class Database:  # pragma: no cover type: ignore
 
     def get_channel(
         self, channel: Channel | int | dict[str, int], sensor: Sensor | None = None
-    ) -> Channel | None:  # type: ignore
+    ) -> Channel | None:  #
         if isinstance(channel, Channel):
             return channel
         elif isinstance(channel, int):
