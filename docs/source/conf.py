@@ -9,7 +9,7 @@ extensions = ["sphinx.ext.intersphinx", "myst_parser"]
 intersphinx_mapping = {"mypy": ("https://mypy.readthedocs.io/en/stable/", None)}
 language = "en"
 html_theme = "furo"
-html_logo = "_static/logo.png"
+# html_logo = "_static/logo.png"
 linkcheck_ignore = [
     "codeofconduct.html",
     "https://github.com/PyCQA/flake8-bugbear#",
@@ -18,8 +18,8 @@ linkcheck_ignore = [
     "https://github.com/pycqa/pep8-naming#",
     "https://github.com/terrencepreilly/darglint#",
     "https://github.com/PyCQA/mccabe#",
-    "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
-    "https://cookiecutter-hypermodern-python.readthedocs.io",
+    # "https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/",
+    # "https://cookiecutter-hypermodern-python.readthedocs.io",
     "https://badgen.net/badge/status/alpha/d8624d",
 ]
 myst_enable_extensions = [
