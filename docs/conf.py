@@ -1,6 +1,6 @@
 """Sphinx configuration."""
 
-project = "sonic"
+project = "sonicdb"
 author = "Daniel Kadyrov"
 copyright = "2024, Daniel Kadyrov"
 extensions = [
