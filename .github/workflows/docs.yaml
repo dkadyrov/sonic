@@ -1,25 +1,22 @@
-name: Build and Deploy Documentation
+name: Publish to TestPyPi
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Trigger the workflow on push to the main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # Specify your Python version
 
     - name: Install Poetry
       run: pip install poetry
@@ -27,11 +24,6 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: Build Sphinx documentation
-      run: poetry run sphinx-build -b html docs/source docs/build
+    - name: Build and publish package
+      run: poetry sphinx-build -b html docs/source docs/build/html
 
-    - name: Upload documentation artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: docs
-        path: docs/build/html
